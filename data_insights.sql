@@ -28,7 +28,7 @@ findings: DS > BA > DA > sr.BA > BIA > sr.DS > sr.DA > PA
 
 -- approved count by city (cleaned up city)
 
-select left(location, length(location) - 2) as city, 
+select left(location, length(location) - 3) as city, 
        count(*) as approved_counts
 from h1b_salary.salaries
 where case_status = 'CERTIFIED' and date_part('Year', start_date) = '2020'
