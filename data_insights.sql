@@ -26,7 +26,7 @@ limit 7
 findings: DS > BA > DA > sr.BA > BIA > sr.DS > sr.DA > PA 
 
 
--- cleaned up city
+-- approved count by city (cleaned up city)
 
 select left(location, length(location) - 2) as city, 
        count(*) as approved_counts
