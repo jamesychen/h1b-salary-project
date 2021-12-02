@@ -77,6 +77,15 @@ where case_status = 'CERTIFIED' and date_part('Year', start_date) = '2020'
 group by 1
 order by 2 DESC
 
+-- cleaned up city
+
+select left(location, length(location) - 2) as city, 
+       count(*) as approved_counts
+from h1b_salary.salaries
+where case_status = 'CERTIFIED' and date_part('Year', start_date) = '2020'
+group by 1
+order by 2 DESC
+
 
 -- approved count by state (extract state)
 
