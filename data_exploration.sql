@@ -126,3 +126,11 @@ having count(*) > 200
 order by 2 DESC, 3 DESC, 4 DESC, 5 DESC, 6 DESC, 7 DESC
 
 
+-- find out the employeers who sponsor for H1b and get approved in 2021
+
+select employer, 
+       count(*) as approved_counts
+from h1b_salary.salaries
+where case_status = 'CERTIFIED' and date_part('Year', start_date) = '2021' and job_title ilike 'business analyst'
+group by 1
+order by 2 DESC
